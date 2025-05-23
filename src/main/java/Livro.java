@@ -1,44 +1,39 @@
 
 public class Livro {
-      //ATRIBUTOS
-    private int isbn;
+
+    private String isbn;
     private String titulo;
     private String autor;
     private int ano;
-    private static int proximoIsbn = 1;
 
     //CONSTRUTOR
-    public Livro(String titulo, String autor, int ano) {
+    public Livro(String isbn, String titulo, String autor, int ano) {
+        this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
-        this.isbn = proximoIsbn++;
     }
 
-    //MÉTODOS GETTER
+    //GETTERS
+    public String getIsbn() {
+        return isbn;
+    }
+
     public String getTitulo() {
-        return this.titulo;
+        return titulo;
     }
 
     public String getAutor() {
-        return this.autor;
-
+        return autor;
     }
 
     public int getAno() {
-        return this.ano;
+        return ano;
     }
 
-    //MÉTODOS SETTER
-    public void setTitulo(String novoTitulo) {
-        this.titulo = novoTitulo;
-    }
-
-    public void setAutor(String novoAutor) {
-        this.autor = novoAutor;
-    }
-
-    public void setAno(int novoAno) {
-        this.ano = novoAno;
+    //MÉTODO EXIBIR LISTA.
+    public void exibir() {
+        System.out.println("Titulo: " + titulo + " | Autor: " + autor + " | Ano: " + ano
+                + " | ISBN: " + isbn);
     }
 }
